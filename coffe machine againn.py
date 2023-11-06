@@ -72,7 +72,7 @@ while run:
         # print(f"nos {len(choice)}")
         print(choice)
         for item, price in choice.items():
-            print(f"item is {item} with a price of {price}")
+            print(f"item is {item} with a price of {}")
 
             # if enough(choice):
             # print(f"that would be {cost[drink]}")
