@@ -69,14 +69,19 @@ while run:
     else:
         choice = menu[drink]
 
-        if enough(choice):
-            print(f"that would be {cost[drink]}")
-            money = int(input(f"please make payment"))
-            if bills(money):
-                profit += cost[drink]
-                sub(choice)
-                print(f"here is your {drink}")
-                print(f"come again")
+        # print(f"nos {len(choice)}")
+        print(choice)
+        for item, price in choice.items():
+            print(f"item is {item} with a price of {price}")
+
+            # if enough(choice):
+            # print(f"that would be {cost[drink]}")
+            # money = int(input(f"please make payment"))
+            # if bills(money):
+            #     profit += cost[drink]
+            #     sub(choice)
+            #     print(f"here is your {drink}")
+            #     print(f"come again")
 
 
 
