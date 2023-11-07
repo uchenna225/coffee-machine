@@ -31,14 +31,12 @@ profit = 0
 
 
 def enough(choice):
-    print(f"nos {len(choice)}")
     for item in choice:
-        if choice[item] <= resource[item]:
-            print(f"enough {choice[item]} - {resource[item]}")
-            return True
-        else:
-            print(f"not enough {choice[item]}")
+        if choice[item] >= resource[item]:
+            print(f"not enough {item}")
             return False
+
+    return True
 
 
 def bills(money):
@@ -69,22 +67,34 @@ while run:
     else:
         choice = menu[drink]
 
-        # print(f"nos {len(choice)}")
-        print(choice)
-        for item, price in choice.items():
-            print(f"item is {item} with a price of {}")
-
-            # if enough(choice):
-            # print(f"that would be {cost[drink]}")
-            # money = int(input(f"please make payment"))
-            # if bills(money):
-            #     profit += cost[drink]
-            #     sub(choice)
-            #     print(f"here is your {drink}")
-            #     print(f"come again")
+        if enough(choice):
+            print(f"that would be {cost[drink]}")
+            money = int(input(f"please make payment"))
+            if bills(money):
+                profit += cost[drink]
+                sub(choice)
+                print(f"here is your {drink}")
+                print(f"come again")
 
 
 
+# def enough(ingredients):
+#     for items in ingredients:
+#         if ingredients[items] >= resource[items]:
+#             print(f"Not enough {resource[items]}")
+#             return False
+#
+#     return True
 
-
-
+# run = True
+# while run:
+#     drink = input("what would u like? 'espresso', 'latte', 'cappucino'")
+#     if drink == "off":
+#         print("Machine under maintainance")
+#         run = False
+#     elif drink == "report":
+#         for key, value in resource.items():
+#             print(f"{key} : {value}")
+#     else:
+#         choice = menu[drink]
+#         print(enough(choice))
